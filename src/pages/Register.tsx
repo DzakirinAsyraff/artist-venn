@@ -8,7 +8,7 @@ export default function Register () {
     // user object that consist of username string and password string
     const [user, setUser] = useState({
         username: "",
-        password: ""
+        rawpassword: ""
     });
 
     // function that handles the change of the input fields
@@ -20,7 +20,8 @@ export default function Register () {
     // function that handles the submit of the form
     const handleSubmit = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         e.preventDefault();
-        axios.post("http://localhost:5000/register", user)
+        console.log(user);
+        axios.post("http://localhost:4000/register", user)
         .then(res => {
             console.log(res);
             // if successful, redirect to /artists
@@ -44,7 +45,7 @@ export default function Register () {
                 </Form.Group>
                 <Form.Group controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" placeholder="Password" name="password" onChange={handleChange}/>
+                    <Form.Control type="password" placeholder="Password" name="rawpassword" onChange={handleChange}/>
                 </Form.Group>
                 <Button variant="primary" type="submit" onClick={handleSubmit}>
                     Register

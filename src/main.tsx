@@ -8,6 +8,7 @@ import App from './App'
 import Home from './pages/Home';
 import Artists from './pages/Artists';
 import Login from './pages/Login';
+import Register from './pages/Register';
 import './index.css'
 
 const router = createBrowserRouter([
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
   {
     path: '/artists',
     element: <Artists />,
+  },
+  {
+    path: '/register',
+    element: <Register />,
   },
 ]);
 
